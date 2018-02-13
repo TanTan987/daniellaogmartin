@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+
+<!--For mobilvennlig versjon-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--CSS-->
+<link rel="stylesheet" type="text/css" href="daniellaogmartin.css">
+
+<!--JS-->
+<!--Responsive-->
+<script src="responsivemenu.js"></script>
+<!--Validation-->
+<script src="validation.js"></script>
+
+<!--Font til overskrift-->
+<link href="https://fonts.googleapis.com/css?family=Alex+Brush|Great+Vibes|Lovers+Quarrel|Rouge+Script|Dancing+Script" rel="stylesheet">
+    <title>Daniella & Martin</title>
+  </head>
+  <body>
+
+<div id="center">
+
+<div class="topnav" id="myTopnav">
+  <a href="daniellaogmartin_forside.html">Forside</a>
+  <a href="#news">Bryllupsdagen</a>
+  <a href="#contact">Ønskeliste</a>
+  <a href="#songs">Sangønsker</a>
+  <a href="#rsvp" class="active">RSVP</a>
+  <a href="javascript:void(0);" class="icon" onclick="responsiveMobile()">&#9776;</a>
+</div>
+
+<div class="container-fluid">
+<!--Title-->
+  <div class="title2">RSVP</div>
+
+<!--First name-->
+<div class="rsvp_containers">
+  <label class="label" for="firstName">Fornavn *</label>
+  <br>
+  <input type="text" name="firstName" id="firstName" class="input">
+</div>
+  <br>
+
+<!--Last name-->
+<div class="rsvp_containers">
+  <label class="label" for="lastName">Etternavn *</label>
+  <br>
+  <input type="text" name="lastName" id="lastName" class="input">
+</div>
+  <br>
+<!--Email-->
+<div class="rsvp_containers">
+  <label class="label" for="email">Epost *</label>
+  <br>
+  <input type="text" name="email" id="email" class="input">
+</div>
+  <br>
+<!--Attendance-->
+<div class="rsvp_containers">
+  <label class="label" for="attendance">Kommer du i vårt bryllup? *</label>
+  <br>
+  <label class="label" for="attendance">Ja</label>
+  <input type="radio" name="attendance" class="radiobutton" class="input" checked="checked" id="attendanceYes">
+  <label class="label" for="attendance">Nei</label>
+  <input type="radio" name="attendance" class="radiobutton" class="input" id="attendanceNo">
+</div>
+  <br>
+
+
+
+<!--Allergies-->
+<div class="rsvp_containers">
+  <label class="label" for="allergies">Har du noen allergier?</label>
+  <br>
+  <input type="textarea" name="allergies" id="allergies" class="input">
+</div>
+  <br>
+
+<!--Submit button-->
+  <input type="button" name="submit" value="Send" class="button" onclick="validateForm()">
+
+
+
+
+</div>  <!--container-fluid div end-->
+
+
+</div><!--Center div end-->
+
+
+
+      </body>
+    </html>
