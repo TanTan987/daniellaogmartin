@@ -19,7 +19,8 @@ body{
 
 /* Add a black background color to the top navigation */
 .topnav {
-    background-color: rgba(255, 255, 255, 0.5);
+    /*background-color: rgba(128, 0, 0, 0.5);*/
+    background-color: rgba(255,255,255,0.5);
     overflow: hidden;
     margin:auto;
 }
@@ -43,8 +44,7 @@ body{
 
 /* Add an active class to highlight the current page */
 .active {
-    background-color: rgba(255, 255, 255, 0.9);
-    color: white;
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
 /* Hide the link that should open and close the topnav on small screens */
@@ -108,48 +108,104 @@ body{
 
 /*Containerbox for information*/
 .container-fluid {
-  /*background-color: rgba(255, 255, 255, 1);*/
-  background-image: url(bilder/soft_wallpaper/soft_wallpaper.png);
-  opacity: 25%;
-  width: auto;
+  background-color: rgba(255, 255, 255, 0.5);
+  /*background-image: url(bilder/flower_border03.jpg);*/
   margin-top: 2em;
   margin-bottom: 2em;
   float: left;
   padding: 1em;
-  background-repeat:  repeat;
+  background-size: auto;
+  border-radius: 25px;
+  /*border-image: url(bilder/frontpagewoodflower.jpg);*/
 }
+
+/*
+#frontPage {
+  background-image: url(bilder/frontpagewoodflower.jpg);
+  background-size: 100%;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  float: left;
+  padding: 1em;
+  padding-bottom: 12em;
+  padding-top: 10em;
+  background-repeat: no-repeat;
+  border-radius: 25px;
+}
+*/
 
 /*Label for RSVP*/
 .label {
   font-size: 20px;
   text-align:left;
-  padding: 5px;
   color: black;
-  margin-top: 1em;
   box-sizing: border-box;
   white-space: pre-wrap;
-  padding-top: 10px;
+  font-size: 20px;
+  font-family: Times New Roman;
 }
 
 /*Input for RSVP*/
-.input {
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
+.input, .inputOther {
+    font-size: 20px;
+    font-family: Times New Roman;
+    resize: vertical;
+    border: 1px solid grey;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+ .input {
   height: 100%;
-  font-size: 20px;
-  width: 98.4%;
+  width: 70%;
+  float: right;
 }
 
-.rsvp_containers {
-
+.row {
+  padding: 5px;
 }
+
+/*When screen goes to mobile, textboxes are changed*/
+@media screen and (max-width: 600px) {
+  input[type="text"]{
+    font-size: 15px;
+    height: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  input[type="textarea"]{
+    font-size: 15px;
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  .input{
+    width: 50%;
+  }
+}
+
+.inputOther {
+  height: 7em;
+  width: 100%;
+  margin-top: 2%;
+}
+
 
 /*Button for RSVP*/
-button{
+button {
   width: 100%;
-  font-size: 20px;
   background-color: white;
   height: 30px;
+  font-size: 20px;
+  font-family: Times New Roman;
+  resize: vertical;
+  border: 1px solid grey;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
  .button:hover {
@@ -160,11 +216,13 @@ button{
 .err {
   border-color: red;
   border-style: dashed;
-  margin-top: 0.5em;
-  margin-bottom: 1em;
-  height: 100%;
   font-size: 20px;
-  width: 98.4%;
+  font-family: Times New Roman;
+  width: 70%;
+  float: right;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
 /*Title 2 for other pages than front page*/
@@ -174,11 +232,6 @@ button{
   text-align: center;
   letter-spacing: 4px;
   text-align: center;
-  padding-top: 10px;
   padding-bottom: 10px;
   color: black;
-}
-
-#buttonTest {
-
 }

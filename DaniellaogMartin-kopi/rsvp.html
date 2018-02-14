@@ -25,7 +25,7 @@
 
 <div class="topnav" id="myTopnav">
   <a href="daniellaogmartin_forside.html">Forside</a>
-  <a href="#news">Bryllupsdagen</a>
+  <a href="#news" >Bryllupsdagen</a>
   <a href="#contact">Ønskeliste</a>
   <a href="#songs">Sangønsker</a>
   <a href="#rsvp" class="active">RSVP</a>
@@ -34,32 +34,33 @@
 
 <div class="container-fluid">
 <!--Title-->
-  <div class="title2">RSVP</div>
+  <div class="title2">~RSVP~</div>
 
 <!--First name-->
-<div class="rsvp_containers">
-  <label class="label" for="firstName">Fornavn *</label>
-  <br>
-  <input type="text" name="firstName" id="firstName" class="input">
+<div class="row">
+    <label class="label" for="firstName">Fornavn *</label>
+    <input type="text" name="firstName" id="firstName" class="input" placeholder="Skriv inn fornavn...">
+</div>
+<br>
+
+<!--Last name-->
+<div class="row">
+    <label class="label" id="lastNameLbl" for="lastName">Etternavn *</label>
+
+    <input type="text" name="lastName" id="lastName" class="input" placeholder="Skriv inn etternavn...">
+</div>
+<br>
+
+<!--Email-->
+<div class="row">
+    <label class="label" for="email">Epost *</label>
+    <input type="text" name="email" id="email" class="input" placeholder="Skriv inn epostadresse...">
 </div>
   <br>
 
-<!--Last name-->
-<div class="rsvp_containers">
-  <label class="label" for="lastName">Etternavn *</label>
-  <br>
-  <input type="text" name="lastName" id="lastName" class="input">
-</div>
-  <br>
-<!--Email-->
-<div class="rsvp_containers">
-  <label class="label" for="email">Epost *</label>
-  <br>
-  <input type="text" name="email" id="email" class="input">
-</div>
-  <br>
+
 <!--Attendance-->
-<div class="rsvp_containers">
+<div class="row">
   <label class="label" for="attendance">Kommer du i vårt bryllup? *</label>
   <br>
   <label class="label" for="attendance">Ja</label>
@@ -69,11 +70,11 @@
 </div>
   <br>
 
-<!--Allergies-->
-<div class="rsvp_containers">
-  <label class="label" for="allergies">Har du noen allergier?</label>
+<!--Allergies and others-->
+<div class="row">
+  <label class="label" for="other">Allergier eller andre ting vi burde vite om?</label>
   <br>
-  <input type="textarea" name="allergies" id="allergies" class="input">
+  <textarea name="other" id="other" class="inputOther" placeholder="Skriv inn kommentarer..."></textarea>
 </div>
 <br>
 
