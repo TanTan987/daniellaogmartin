@@ -35,7 +35,7 @@ function validateForm() {
 //email
 //if email is empty
     if (isEmpty(email)) {
-      alert("Vennligst skriv inn en epostadresse.");
+      alert("Vennligst skriv inn en epostadresse");
       document.getElementById("email").setAttribute("class", "err");
       return false;
          }
@@ -45,7 +45,7 @@ function validateForm() {
 
 //validates email address
      if (!(validateEmail(email))) {
-         alert("Vennligst skriv inn gyldig epostadresse!");
+         alert("Vennligst skriv inn gyldig epostadresse");
          document.getElementById("email").setAttribute("class", "err");
          return false;
      }

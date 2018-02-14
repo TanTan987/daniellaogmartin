@@ -25,26 +25,35 @@
 
 <div class="topnav" id="myTopnav">
   <a href="daniellaogmartin_forside.html">Forside</a>
-  <a href="#news" >Bryllupsdagen</a>
+  <a href="weddingday.html">Bryllupsdagen</a>
+  <a href="#informasjon">Informasjon</a>
   <a href="#contact">Ønskeliste</a>
-  <a href="#songs">Sangønsker</a>
+  <a href="#contact">Kontakter</a>
   <a href="#rsvp" class="active">RSVP</a>
   <a href="javascript:void(0);" class="icon" onclick="responsiveMobile()">&#9776;</a>
 </div>
 
-<div class="container-fluid">
+<div class="container-fluid" id="frontPage">
+<!--Title-->
+  <div id="title">Daniella & Martin</div>
+<!--Sub-title-->
+  <div id="heading1">11.08.18</div>
+  <div id="heading1">Eventyret på Vøyenenga</div>
+</div>
+
+<div class="container-rsvp">
 <!--Title-->
   <div class="title2">~RSVP~</div>
 
 <!--First name-->
-<div class="row">
+<div class="rsvpRow">
     <label class="label" for="firstName">Fornavn *</label>
     <input type="text" name="firstName" id="firstName" class="input" placeholder="Skriv inn fornavn...">
 </div>
 <br>
 
 <!--Last name-->
-<div class="row">
+<div class="rsvpRow">
     <label class="label" id="lastNameLbl" for="lastName">Etternavn *</label>
 
     <input type="text" name="lastName" id="lastName" class="input" placeholder="Skriv inn etternavn...">
@@ -52,7 +61,7 @@
 <br>
 
 <!--Email-->
-<div class="row">
+<div class="rsvpRow">
     <label class="label" for="email">Epost *</label>
     <input type="text" name="email" id="email" class="input" placeholder="Skriv inn epostadresse...">
 </div>
@@ -60,7 +69,7 @@
 
 
 <!--Attendance-->
-<div class="row">
+<div class="rsvpRow">
   <label class="label" for="attendance">Kommer du i vårt bryllup? *</label>
   <br>
   <label class="label" for="attendance">Ja</label>

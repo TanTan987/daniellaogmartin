@@ -7,6 +7,8 @@ body{
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  margin-left: 10%;
+  margin-right: 10%;
   }
 
 /*Fixes image to mobile*/
@@ -14,6 +16,8 @@ body{
   body {
   background-image: url(bilder/forsidebilde02.jpg);
   background-position-x: -46em;
+  margin-left: 0;
+  margin-right: 0;
  }
 }
 
@@ -33,7 +37,8 @@ body{
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 22px;
+    font-family: "Dancing Script";
 }
 
 /* Change the color of links on hover */
@@ -52,8 +57,8 @@ body{
     display: none;
 }
 
-/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
-@media screen and (max-width: 600px) {
+/* When the screen is less than 870 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 1060px) {
   .topnav a:not(:first-child) {display: none;}
   .topnav a.icon {
     float: right;
@@ -62,7 +67,7 @@ body{
 }
 
 /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1060px) {
   .topnav.responsive {position: relative;}
   .topnav.responsive a.icon {
     position: absolute;
@@ -119,21 +124,6 @@ body{
   /*border-image: url(bilder/frontpagewoodflower.jpg);*/
 }
 
-/*
-#frontPage {
-  background-image: url(bilder/frontpagewoodflower.jpg);
-  background-size: 100%;
-  margin-top: 2em;
-  margin-bottom: 2em;
-  float: left;
-  padding: 1em;
-  padding-bottom: 12em;
-  padding-top: 10em;
-  background-repeat: no-repeat;
-  border-radius: 25px;
-}
-*/
-
 /*Label for RSVP*/
 .label {
   font-size: 20px;
@@ -162,7 +152,7 @@ body{
   float: right;
 }
 
-.row {
+.rsvpRow {
   padding: 5px;
 }
 
@@ -191,8 +181,8 @@ body{
   height: 7em;
   width: 100%;
   margin-top: 2%;
+  resize: none;
 }
-
 
 /*Button for RSVP*/
 button {
@@ -234,4 +224,88 @@ button {
   text-align: center;
   padding-bottom: 10px;
   color: black;
+}
+
+
+
+/*Containerbox for information*/
+.container-weddingday, .container-rsvp{
+  background-color: rgba(255, 255, 255, 0.5);
+  margin-top: 2em;
+  margin-bottom: 2em;
+  padding: 1em;
+  background-size: auto;
+  border-radius: 25px;
+  margin-left: 50%;
+}
+
+@media screen and (max-width: 1200px) {
+  .container-weddingday, .container-rsvp{
+    float:left;
+    margin-left: 0;
+    margin-top: auto;
+  }
+}
+
+.weddingdayRow {
+  width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  .weddingdayRow{
+    width: 100%;
+  }
+}
+
+.weddingdayTitle {
+  font-size: 60px;
+  font-family: 'Dancing Script';
+  text-align: center;
+  letter-spacing: 4px;
+  text-align: center;
+  padding-bottom: 10px;
+  color: black;
+}
+
+/*Resizes the title*/
+@media screen and (max-width: 600px) {
+  .weddingdayTitle{
+    font-size: 9.5vw;
+  }
+}
+
+/*Map on Weddingday page*/
+#map {
+  height: auto;
+  width: 50%;
+  border: 1px solid grey;
+  float: left;
+  margin-bottom: 10px;
+  position: inherit;
+  margin-left: 25%;
+  margin-right: 25%;
+  border-radius: 4px;
+
+}
+
+.churchImage{
+  height: 50%;
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
+  border-radius: 4px;
+
+}
+
+@media screen and (max-width: 600px) {
+  #map, .churchImage{
+    float: none;
+    position: center;
+  }
+}
+
+.weddingdayText {
+  text-align: center;
+  text-decoration: none;
+  text-indent: inherit;
 }
