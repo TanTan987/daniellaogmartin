@@ -84,8 +84,6 @@ body{
 
 /*Center tag which puts menu in center*/
 #center {
-  margin-left:  2em;
-  margin-right:  2em;
   letter-spacing: 2px;
 }
 
@@ -229,18 +227,20 @@ button {
 
 
 /*Containerbox for information*/
-.container-weddingday, .container-rsvp{
+.containerInfo {
   background-color: rgba(255, 255, 255, 0.5);
   margin-top: 2em;
   margin-bottom: 2em;
   padding: 1em;
+  padding-left: 4%;
+  padding-right: 4%;
   background-size: auto;
   border-radius: 25px;
   margin-left: 50%;
 }
 
 @media screen and (max-width: 1200px) {
-  .container-weddingday, .container-rsvp{
+  .containerInfo {
     float:left;
     margin-left: 0;
     margin-top: auto;
@@ -267,6 +267,16 @@ button {
   color: black;
 }
 
+.weddingdayTitle2 {
+  font-size: 50px;
+  font-family: 'Dancing Script';
+  text-align: center;
+  letter-spacing: 4px;
+  text-align: center;
+  padding-bottom: 10px;
+  color: black;
+}
+
 /*Resizes the title*/
 @media screen and (max-width: 600px) {
   .weddingdayTitle{
@@ -277,15 +287,12 @@ button {
 /*Map on Weddingday page*/
 #map {
   height: auto;
-  width: 50%;
+  width: 100%;
   border: 1px solid grey;
   float: left;
   margin-bottom: 10px;
   position: inherit;
-  margin-left: 25%;
-  margin-right: 25%;
   border-radius: 4px;
-
 }
 
 .churchImage{
@@ -294,7 +301,6 @@ button {
   margin-left: 25%;
   margin-right: 25%;
   border-radius: 4px;
-
 }
 
 @media screen and (max-width: 600px) {
@@ -308,4 +314,37 @@ button {
   text-align: center;
   text-decoration: none;
   text-indent: inherit;
+  font-family: 'Poppins';
+}
+
+.mySlides {
+  display:none;
+  width: 100%;
+  height: 100%;
+  display: none;
+  padding-right: 2em;
+  padding-left: 2em;
+}
+
+.containerInfoImages {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  padding: 1em;
+  /* padding-left: 4%;
+  padding-right: 4%; */
+  background-size: auto;
+  border-radius: 25px;
+  /* margin-left: 50%; */
+}
+
+.containerImages {
+  padding: 2em;
+  margin-top: 35%;
+  background-color: rgba(255,255,255,0.8);
+
+}
+
+.w3-button, .w3-black, .w3-display-left {
+  width: 5%;
+  resize: none;
 }

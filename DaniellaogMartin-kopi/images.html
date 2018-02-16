@@ -9,9 +9,13 @@
 <!--CSS-->
 <link rel="stylesheet" type="text/css" href="daniellaogmartin.css">
 
+
 <!--JS-->
 <!--Responsive menu-->
 <script src="responsivemenu.js"></script>
+<!--Image Carousel-->
+<script src="imageCarousel.js"></script>
+
 
 <!--Fonts for title-->
 <link href="https://fonts.googleapis.com/css?family=Alex+Brush|Great+Vibes|Lovers+Quarrel|Rouge+Script|Dancing+Script|Poppins" rel="stylesheet">
@@ -23,8 +27,8 @@
 <div id="center">
 
 <div class="topnav" id="myTopnav">
-  <a href="daniellaogmartin_forside.html" class="active">Forside</a>
-  <a href="images.html">Bilder</a>
+  <a href="daniellaogmartin_forside.html">Forside</a>
+  <a href="images.html" class="active">Bilder</a>
   <a href="weddingday.html">Bryllupsdagen</a>
   <a href="information.html">Informasjon</a>
   <a href="wishlist.html">Ønskeliste</a>
@@ -42,7 +46,21 @@
   <div id="heading1">Eventyret på Vøyenenga</div>
 </div>
 
+<div class="containerInfoImages">
+  <div class="w3-content w3-display-container">
+    <div class="containerImages">
+      <div class="title2">~Bilder~</div>
 
+      <img class="mySlides" src="bilder/bilder_martindani/martindani1.jpg">
+      <img class="mySlides" src="bilder/bilder_martindani/martindani2.jpg">
+      <img class="mySlides" src="bilder/bilder_martindani/martindani3.jpg">
+    </div>
+
+  <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+  <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+</div>
+
+</div>
     </div>
 
   </body>
