@@ -11,7 +11,7 @@ function validateForm() {
 
 //firstname
     if (isEmpty(firstName) || (!firstName.match(letters))) {
-        alert("Fyll inn fornavn");
+        alert("Skriv inn fornavn");
         document.getElementById("firstName").setAttribute("class", "err");
         return false;
     }
@@ -22,7 +22,7 @@ function validateForm() {
 
 //lastname
     if (isEmpty(lastName) || (!lastName.match(letters))) {
-        alert("Fyll inn etternavn");
+        alert("Skriv inn etternavn");
         document.getElementById("lastName").setAttribute("class", "err");
         return false;
     }
