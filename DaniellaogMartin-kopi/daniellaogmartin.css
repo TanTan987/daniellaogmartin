@@ -1,7 +1,7 @@
 body{
-  background-image: url(bilder/forsidebilde02.jpg);
+  background-image: url(bilder/backgrounds/bohemian.jpg);
   background-repeat: no-repeat;
-  background-size: auto 100%;
+  background-size: auto;
   background-attachment: fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -9,15 +9,15 @@ body{
   background-size: cover;
   margin-left: 10%;
   margin-right: 10%;
+  background-position-y: 65%;
   }
 
 /*Fixes image to mobile*/
 @media only screen and (max-width: 487px) {
   body {
-  background-image: url(bilder/forsidebilde02.jpg);
-  background-position-x: -46em;
-  margin-left: 0;
-  margin-right: 0;
+  background-position-x: -26em;
+  margin-left: 5%;
+  margin-right: 5%;
  }
 }
 
@@ -111,15 +111,24 @@ body{
 
 /*Containerbox for information*/
 .container-fluid {
-  background-color: rgba(255, 255, 255, 0.5);
-  /*background-image: url(bilder/flower_border03.jpg);*/
+  background-color: rgba(255, 255, 255, 0.7);
+  margin-top: 2em;
+  margin-bottom: 2em;
+  float: right;
+  padding: 1em;
+  background-size: auto;
+  border-radius: 25px;
+}
+
+/*Containerbox for information for front page*/
+.container-fluid_fp {
+  background-color: rgba(255, 255, 255, 0.7);
   margin-top: 2em;
   margin-bottom: 2em;
   float: left;
   padding: 1em;
   background-size: auto;
   border-radius: 25px;
-  /*border-image: url(bilder/frontpagewoodflower.jpg);*/
 }
 
 /*Label for RSVP*/
@@ -226,7 +235,7 @@ button {
 
 /*Containerbox for information*/
 .containerInfo {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.7);
   margin-top: 2em;
   margin-bottom: 2em;
   padding: 1em;
@@ -234,16 +243,18 @@ button {
   padding-right: 3%;
   background-size: auto;
   border-radius: 25px;
-  margin-left: 50%;
+  margin-right: 50%;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1150px) {
   .containerInfo {
+    width: 100%;
     float:left;
     margin-left: 0;
     margin-top: auto;
   }
 }
+
 
 .weddingdayRow {
   width: 100%;
@@ -263,7 +274,6 @@ button {
   text-align: center;
   padding-bottom: 10px;
   color: black;
-  text-decoration: underline;
 }
 
 .weddingdayTitle2 {
@@ -308,7 +318,7 @@ button {
 
 /*Map on Weddingday page*/
 #map {
-  height: auto;
+  height: 300px;
   width: 100%;
   border: 1px solid grey;
   float: left;
@@ -326,7 +336,7 @@ button {
 }
 
 @media screen and (max-width: 600px) {
-  #map, .churchImage{
+  #map, .image{
     float: none;
     position: center;
   }
@@ -367,7 +377,7 @@ button {
   padding-right: 4%; */
   background-size: auto;
   border-radius: 25px;
-  /* margin-left: 50%; */
+  margin-right: 50%;
 }
 
 .containerImages {
@@ -382,6 +392,7 @@ button {
   resize: none;
 }
 
+/*Map over hotels with resizing*/
 iframe {
   border: 1px solid grey;
   margin-bottom: 10px;
@@ -408,3 +419,84 @@ iframe {
 .hotelLink:hover {
   font-style: italic;
 }
+
+/*TEST START*/
+.carousel {
+  position:relative;
+  width:400px;
+  border:10px solid white;
+  margin:20px auto;
+  box-shadow:0px 0px 40px #000;
+}
+.carousel > img {
+  display:none;
+  width:100%;
+}
+.carousel > input {
+  position:absolute;
+  left:-9999px;
+}
+.carousel > input:checked + label + img {
+  display:block;
+}
+
+.carousel > label,
+.carousel > input:checked ~ label ~ label ~ label ~ label {
+  display:none;
+}
+.carousel > input:checked + label {
+  display:block;
+  left:0;
+}
+.carousel > input:checked ~ label ~ label ~ label {
+  display:block;
+  right:0;
+}
+
+.carousel > label {
+  position:absolute;
+  top:0;
+  width:25%;
+  height:100%;
+  visibility:hidden;
+}
+.carousel > label:before {
+  content:'';
+  display:block;
+  position:absolute;
+  width:100%;
+  height:100%;
+  visibility:visible;
+}
+.carousel > label:after {
+  display:block;
+  position:absolute;
+  top:50%;
+  width:25px;
+  height:25px;
+  line-height:22px;
+  margin:-15px 10px 0 10px;
+  background-color:black;
+  color:white;
+  font-family:'Arial';
+  font-weight:bold;
+  font-size:18px;
+  text-align:center;
+  visibility:hidden;
+  border:2px solid white;
+  border-radius:20px;
+  box-shadow:0 3px 4px black;
+}
+.carousel > label:hover:after {
+  visibility:visible;
+}
+
+.carousel > input:checked + label:after {
+  left:0;
+  content:'\00AB';
+}
+.carousel > input:checked ~ label ~ label ~ label:after {
+  right:0;
+  content:'\00BB';
+}
+/*TEST END*/

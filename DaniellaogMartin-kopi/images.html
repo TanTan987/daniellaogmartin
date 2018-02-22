@@ -2,19 +2,17 @@
 <html>
   <head>
     <meta charset="utf-8">
-
 <!--Responsive mobile-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!--CSS-->
 <link rel="stylesheet" type="text/css" href="daniellaogmartin.css">
 
-
 <!--JS-->
 <!--Responsive menu-->
 <script src="responsivemenu.js"></script>
 <!--Image Carousel-->
-<script src="imageCarousel.js"></script>
+<script src="images2.js"></script>
 
 
 <!--Fonts for title-->
@@ -38,7 +36,7 @@
 </div>
 
 
-<div class="container-fluid" id="frontPage">
+<div class="container-fluid">
 <!--Title-->
   <div id="title">Daniella & Martin</div>
 <!--Sub-title-->
@@ -47,20 +45,33 @@
 </div>
 
 <div class="containerInfoImages">
-  <div class="w3-content w3-display-container">
-    <div class="containerImages">
-      <div class="title2">~Bilder~</div>
 
-      <img class="mySlides" src="bilder/bilder_martindani/martindani1.jpg">
-      <img class="mySlides" src="bilder/bilder_martindani/martindani2.jpg">
-      <img class="mySlides" src="bilder/bilder_martindani/martindani3.jpg">
-    </div>
+<!--TEST START-->
+<div class="carousel">
+  <input id="image1" type="radio" name="image-selector" checked="checked" />
+  <label for="image4">View image 4</label>
+  <img src="bilder/bilder_martindani/martindani1.jpg" />
 
-  <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-  <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+  <input id="image2" type="radio" name="image-selector" />
+  <label for="image1">View image 1</label>
+  <img src="bilder/bilder_martindani/martindani2.jpg" />
+
+  <input id="image3" type="radio" name="image-selector" />
+  <label for="image2">View image 2</label>
+  <img src="bilder/bilder_martindani/martindani3.jpg" />
+
+  <!-- <input id="image4" type="radio" name="image-selector" />
+  <label for="image3">View image 3</label>
+  <img src="bilder/bilder_martindani/martindani4.jpg" /> -->
+
+  <label for="image3">View image 3</label>
+  <label for="image1">View image 1</label>
 </div>
 
+<!--TEST END-->
+
 </div>
+
     </div>
 
   </body>
