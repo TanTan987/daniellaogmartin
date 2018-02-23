@@ -7,8 +7,6 @@ function validateForm() {
   //var numbers = /^[0-9]+$/;
   var email = document.getElementById("email").value;
 
-
-
 //firstname
     if (isEmpty(firstName) || (!firstName.match(letters))) {
         alert("Skriv inn fornavn");
@@ -53,9 +51,6 @@ function validateForm() {
        document.getElementById('email').setAttribute("class", "input");
      }
 
-
-
-
 //Checks for empty string
 function isEmpty(str) {
    return (!str || 0 === str.length);
@@ -76,6 +71,12 @@ function validateEmail(email) {
    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
    return re.test(email);
      }
-}
 
-//(!(name.value.match(letters)))
+/*If validation is ok, send the info to MySQL*/
+// mysql.createConnection();
+// con.connect();
+firstName.clear();
+lastname.clear();
+email.clear();
+other.clear();
+}

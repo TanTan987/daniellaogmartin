@@ -1,5 +1,5 @@
 body{
-  background-image: url(bilder/backgrounds/flowerbridge.jpg);
+  background-image: url(bilder/backgrounds/weddingcouple_bridge.jpeg);
   background-repeat: no-repeat;
   background-size: auto;
   background-attachment: fixed;
@@ -7,63 +7,62 @@ body{
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  margin-left: 10%;
-  margin-right: 10%;
-  background-position-y: 65%;
   letter-spacing: 2px;
   }
 
+/*To center eeeeverything*/
+#wrapping{
+  margin-left: 15%;
+  margin-right: 15%;
+  width: auto;
+}
+
 /*Fixes image to mobile*/
 @media only screen and (max-width: 487px) {
-  body {
-  background-position-x: -26em;
+  #wrapping {
   margin-left: 5%;
-  margin-right: 10%;
+  margin-right: 5%;
  }
 }
 
-@media only screen and (max-width: 1028px) {
-  body {
-  background-position: center;
- }
-}
-
-
-/* Add a black background color to the top navigation */
+/* Add a background color to the top navigation */
 .topnav {
-/*  background-color: rgba(85,107,47,0.8);*/
-  background-color: rgba(21,50,0,0.9);
+  /*background-color: rgba(21,50,0,0.9);*/
+  background-color: rgba(255,255,255,0.8);
   overflow: hidden;
-  margin:auto;
-  width: 86%;
-  margin-left: 10%;
-  border-radius: 25px;
-  color: white;
-  margin-top: 2em;
+  margin: auto;
+  color: black;
+  margin-top: 1em;
 }
 
 /* Style the links inside the navigation bar */
 .topnav a {
   float: left;
   display: block;
-  color: white;
+  color: black;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 22px;
   font-family: "Dancing Script";
+  transition: font-size .2s linear;
 }
 
 /* Change the color of links on hover */
 .topnav a:hover {
-  background-color: rgba(107,142,35, 0.9);
-  /*background-color: #ddd;*/
+  /*background-color: rgba(107,142,35, 0.9);*/
+  background-color: rgb(255,255,255);
+
   color: black;
+  cursor: pointer;
+  font-size: 23px;
 }
 
 /* Add an active class to highlight the current page */
 .active {
-  background-color: rgba(59,74,32, 0.9);
+  /*background-color: rgba(59,74,32, 0.9);*/
+  background-color: rgb(255,255,255);
+
   font-style: italic;
 }
 
@@ -102,55 +101,189 @@ body{
   }
 }
 
-/*Title - only for the front page*/
-#title{
-  font-size: 70px;
+/*Container for boxes after menu*/
+.containerAll{
+  display: flex;
+  flex-direction: row;
+}
+
+@media screen and (max-width: 1260px) {
+ .containerAll {
+   flex-direction: column;
+   width: 100%;
+ }
+}
+
+/*Title for ContainerMain*/
+#mainTitle{
+  font-size: 60px;
   font-family: 'Lovers Quarrel';
   text-align: center;
   letter-spacing: 4px;
   text-align: center;
-  color: white;
+  color: black;
 }
 
-#heading1 {
+#sub-mainTitle {
   font-size: 40px;
   text-align: center;
   font-family: 'Great Vibes';
   letter-spacing: 2px;
   padding: 5px;
-  color: white;
+  color: black;
 }
 
-/*Containerbox for information*/
-/*Dark olive green*/
-.container-fluid {
-/*  background-color: rgba(85,107,47, 0.8);*/
-  background-color: rgba(21,50,0, 0.8);
-  margin-top: 3em;
-  margin-bottom: 1em;
+/*Containerbox for main*/
+.containerMain {
+  background-color: rgba(255,255,255, 0.7);
   background-size: auto;
-  border-radius: 25px;
-  width: 55%;
+  flex: 1 1 auto;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  margin-right: : 1em;
+  margin-top: 1em;
+  height: 100%;
+  width: 250%;
+}
+
+/*Container for front page main*/
+.containerMain-fp{
+  background-color: rgba(255,255,255, 0.7);
+  background-size: auto;
+  flex: 1 1 auto;
+  padding: 1em;
+  margin-left: : 1em;
+  margin-top: 1em;
+  height: 100%;
+  width: auto;
+  float:right;
+}
+
+/*Containers for the images-page*/
+#containerAll_images{
+  float: right;
+  width: 100%;
+}
+
+.containerMain_images {
+  background-color: rgba(255,255,255, 0.7);
+  margin-top: 1em;
+  margin-bottom: 1em;
+  width: 50%;
   margin-left: 25%;
 }
 
-@media screen and (max-width: 975px) {
- .container-fluid {
-   width: 100%;
-   float:left;
+@media screen and (max-width: 1260px) {
+ .containerMain_images {
+   width:100%;
    margin-left: 0;
  }
 }
 
-/*Containerbox for information for front page*/
-.container-fluid_fp {
-  background-color: rgba(255, 255, 255, 0.7);
-  margin-top: 2em;
-  margin-bottom: 2em;
-  float: left;
+.containerInfo_images {
+  display: flex;
+}
+
+/*Containerbox for information*/
+.containerInfo {
+  background-color: rgba(255,255,255,0.7);
+  margin-left: 1em;
+  margin-top: 1em;
   padding: 1em;
-  background-size: auto;
-  border-radius: 25px;
+  flex: 2 1 auto;
+  width: 300%;
+}
+
+ @media screen and (max-width: 1250px) {
+ .containerInfo, .containerMain {
+   margin-left: 0;
+   margin-right: 0;
+   margin-bottom: 0;
+   margin-top: 1em;
+   width: 100%;
+   padding-left: 2px;
+   padding-right: 2px;
+ }
+}
+
+/*Titles for Container Info-boxes*/
+.title {
+  font-size: 60px;
+  font-family: 'Dancing Script';
+  text-align: center;
+  letter-spacing: 4px;
+  text-align: center;
+  padding-bottom: 10px;
+  color: black;
+}
+
+.title2 {
+  font-size: 50px;
+  font-family: 'Dancing Script';
+  text-align: center;
+  letter-spacing: 4px;
+  text-align: center;
+  padding-bottom: 10px;
+  color: black;
+}
+
+.subTitle {
+  font-size: 30px;
+  font-family: 'Dancing Script';
+  text-align: center;
+  letter-spacing: 4px;
+  text-align: center;
+  color: black;
+  padding-top: 2px;
+}
+
+.subTitle {
+  font-size: 30px;
+  font-family: 'Dancing Script';
+  text-align: center;
+  letter-spacing: 4px;
+  text-align: center;
+  color: black;
+  padding-top: 2px;
+}
+
+/*Resizes the titles*/
+@media screen and (max-width: 600px) {
+  .title{
+    font-size: 9.5vw;
+  }}
+
+@media screen and (max-width: 600px) {
+  .title2{
+    font-size: 8.5vw;
+  }}
+
+@media screen and (max-width: 600px) {
+  .subTitle{
+    font-size: 7.5vw;
+  }}
+
+/*All rows*/
+.row {
+  padding: 5px;
+  width: 100%;
+}
+
+.contactsRow {
+  padding: 5px;
+  width: 100%;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+/*All text*/
+.text {
+  text-align: center;
+  text-decoration: none;
+  text-indent: inherit;
+  font-family: 'Poppins';
+  color: black;
 }
 
 /*Label for RSVP*/
@@ -162,7 +295,7 @@ body{
   white-space: pre-wrap;
   font-size: 20px;
   font-family: Times New Roman;
-  color: white;
+  color: black;
 }
 
 /*Input for RSVP*/
@@ -176,17 +309,19 @@ body{
     box-sizing: border-box;
 }
 
- .input {
+.input {
   height: 100%;
   width: 70%;
   float: right;
 }
 
-.rsvpRow {
-  padding: 5px;
+/*When screen goes to mobile, textboxes are changed*/
+@media screen and (max-width: 1260px) {
+  input[type="text"]{
+    margin-right: 5%;
+  }
 }
 
-/*When screen goes to mobile, textboxes are changed*/
 @media screen and (max-width: 600px) {
   input[type="text"]{
     font-size: 15px;
@@ -200,7 +335,6 @@ body{
   }
 }
 
-
 @media screen and (max-width: 600px) {
   .input{
     width: 50%;
@@ -209,7 +343,7 @@ body{
 
 .inputOther {
   height: 7em;
-  width: 100%;
+  width: 95%;
   margin-top: 2%;
   resize: none;
 }
@@ -228,7 +362,8 @@ button {
   box-sizing: border-box;
 }
 
- .button:hover {
+/*Animation for hovering the submit-button*/
+.button:hover {
   background-color: azure;
 }
 
@@ -245,171 +380,18 @@ button {
   box-sizing: border-box;
 }
 
-/*Title 2 for other pages than front page*/
-.title2{
-  font-size: 60px;
-  font-family: 'Dancing Script';
-  text-align: center;
-  letter-spacing: 4px;
-  text-align: center;
-  padding-bottom: 10px;
-  color: white;
-}
-
-/*Containerbox for information*/
-.containerInfo {
-  background-color: rgba(21,50,0,0.8); /*Dark olive green*/
-  background-size: auto;
-  margin-bottom: 2em;
-  padding: 1em;
-  padding-left: 3%;
-  padding-right: 3%;
-  border-radius: 25px;
-  width: 50%;
-  margin-left: 25%;
-  margin-right: 25%;
-}
-
- @media screen and (max-width: 975px) {
-  .containerInfo {
-    width: 100%;
-    float:left;
-    margin-left: 0;
-    margin-right: 5%;
-    }
-}
-
-
-.weddingdayRow {
-  width: 100%;
-}
-
-@media screen and (max-width: 600px) {
-  .weddingdayRow{
-    width: 100%;
-  }
-}
-
-.weddingdayTitle {
-  font-size: 60px;
-  font-family: 'Dancing Script';
-  text-align: center;
-  letter-spacing: 4px;
-  text-align: center;
-  padding-bottom: 10px;
-  color: white;
-}
-
-.weddingdayTitle2 {
-  font-size: 50px;
-  font-family: 'Dancing Script';
-  text-align: center;
-  letter-spacing: 4px;
-  text-align: center;
-  padding-bottom: 10px;
-  color: white;
-}
-
-.weddingdaySubTitle {
-  font-size: 30px;
-  font-family: 'Dancing Script';
-  text-align: center;
-  letter-spacing: 4px;
-  text-align: center;
-  color: white;
-  padding-top: 5%;
-}
-
-
-/*Resizes the titles*/
-@media screen and (max-width: 600px) {
-  .weddingdayTitle{
-    font-size: 9.5vw;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .weddingdayTitle2{
-    font-size: 8.5vw;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .weddingdaySubTitle{
-    font-size: 7.5vw;
-  }
-}
-
-/*Map on Weddingday page*/
-#map {
-  height: 300px;
-  width: 100%;
-  border: 1px solid grey;
-  float: left;
-  margin-bottom: 10px;
-  position: inherit;
-  border-radius: 4px;
-}
-
 .image{
   height: auto;
   width: 80%;
   margin-left: 10%;
   margin-right: 10%;
-
 }
 
 @media screen and (max-width: 600px) {
-  #map, .image{
+  iframe, .image{
     float: none;
     position: center;
   }
-}
-
-.weddingdayText {
-  text-align: center;
-  text-decoration: none;
-  text-indent: inherit;
-  font-family: 'Poppins';
-  color: white;
-}
-
-#weddingdayTime {
-  padding-left: 20%;
-  float: left;
-}
-
-#weddingdayInfo {
-  margin-left: 30%;
-  text-align: left;
-}
-
-/*Images HTML*/
-.mySlides {
-  display:none;
-  width: 100%;
-  height: 100%;
-  display: none;
-  padding-right: 2em;
-  padding-left: 2em;
-}
-
-.containerInfoImages {
-  margin-top: 2em;
-  margin-bottom: 2em;
-  padding: 1em;
-  /* padding-left: 4%;
-  padding-right: 4%; */
-  background-size: auto;
-  border-radius: 25px;
-  margin-right: 50%;
-}
-
-.containerImages {
-  padding: 2em;
-  margin-top: 35%;
-  background-color: rgba(255,255,255,0.8);
-
 }
 
 .w3-button, .w3-black, .w3-display-left {
@@ -423,20 +405,24 @@ iframe {
   margin-bottom: 10px;
   width: 100%;
   height: 300px;
+  float: left;
+  position: inherit;
+
 }
 
 @media screen and (max-width: 1200px) {
   iframe{
-    width: 100%;
+    width: 99%;
     height: 400px;
   }
 }
 
+/*The order now-links*/
 .hotelLink {
   text-align: center;
   text-indent: inherit;
   font-family: 'Poppins';
-  color: white;
+  color: black;
   text-decoration: underline;
   padding-left: 40%;
 }
@@ -445,14 +431,15 @@ iframe {
   font-style: italic;
 }
 
-/*TEST START*/
+/*image carousel*/
 .carousel {
   position:relative;
-  width:400px;
+  width:600px;
   border:10px solid white;
   margin:20px auto;
   box-shadow:0px 0px 40px #000;
 }
+
 .carousel > img {
   display:none;
   width:100%;
@@ -524,4 +511,66 @@ iframe {
   right:0;
   content:'\00BB';
 }
-/*TEST END*/
+
+/*images for contacts*/
+.contactImage{
+  margin-left: 18%;
+  margin-top: 2px;
+}
+
+@media screen and (max-width: 1250px) {
+  .contactImage{
+    margin-left: 30%;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .contactImage{
+    margin-left: 25%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .contactImage{
+    margin-left: 0;
+  }
+}
+
+
+/*Image swing*/
+.swing {
+  animation: swing ease-in-out 1s infinite alternate;
+  transform-origin: center -20px;
+  float:left;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+}
+.swing img {
+  border: 5px solid #f8f8f8;
+  display: block;
+}
+.swing:after{
+  content: '';
+  position: absolute;
+  width: 20px; height: 20px;
+  border: 1px solid #999;
+  top: -10px; left: 50%;
+  z-index: 0;
+  border-bottom: none;
+  border-right: none;
+  transform: rotate(45deg);
+}
+/* nail */
+.swing:before{
+  content: '';
+  position: absolute;
+  width: 5px; height: 5px;
+  top: -14px;left: 54%;
+  z-index: 5;
+  border-radius: 50% 50%;
+  background: #000;
+}
+
+@keyframes swing {
+  0% { transform: rotate(3deg); }
+  100% { transform: rotate(-3deg); }
+}

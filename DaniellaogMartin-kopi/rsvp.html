@@ -14,13 +14,16 @@
 <script src="responsivemenu.js"></script>
 <!--Validation-->
 <script src="validation.js"></script>
+<script src="node.js"></script>
+
 
 <!--Fonts for title-->
 <link href="https://fonts.googleapis.com/css?family=Alex+Brush|Great+Vibes|Lovers+Quarrel|Rouge+Script|Dancing+Script|Poppins" rel="stylesheet">
     <title>Daniella & Martin</title>
   </head>
   <body>
-<!--Puts menu in center-->
+<div id="wrapping">
+
 
 <div class="topnav" id="myTopnav">
   <a href="daniellaogmartin_forside.html">Forside</a>
@@ -32,25 +35,30 @@
   <a href="#rsvp" class="active">RSVP</a>
   <a href="javascript:void(0);" class="icon" onclick="responsiveMobile()">&#9776;</a>
 </div>
+<div class="containerAll">
 
-<div class="container-fluid">
+
+<div class="containerMain">
 <!--Title-->
-  <div id="title">Daniella & Martin</div>
+  <div id="mainTitle">Daniella & Martin</div>
+<!--Sub-title-->
+  <div id="sub-mainTitle">11.08.18</div>
+  <div id="sub-mainTitle">Bryn Kirke</div>
 </div>
 
 <div class="containerInfo">
 <!--Title-->
-  <div class="title2">~RSVP~</div>
+  <div class="title">~RSVP~</div>
 
 <!--First name-->
-<div class="rsvpRow">
+<div class="row">
     <label class="label" for="firstName">Fornavn *</label>
     <input type="text" name="firstName" id="firstName" class="input" placeholder="Skriv inn fornavn...">
 </div>
 <br>
 
 <!--Last name-->
-<div class="rsvpRow">
+<div class="row">
     <label class="label" id="lastNameLbl" for="lastName">Etternavn *</label>
 
     <input type="text" name="lastName" id="lastName" class="input" placeholder="Skriv inn etternavn...">
@@ -58,7 +66,7 @@
 <br>
 
 <!--Email-->
-<div class="rsvpRow">
+<div class="row">
     <label class="label" for="email">Epost *</label>
     <input type="text" name="email" id="email" class="input" placeholder="Skriv inn epostadresse...">
 </div>
@@ -66,7 +74,7 @@
 
 
 <!--Attendance-->
-<div class="rsvpRow">
+<div class="row">
   <label class="label" for="attendance">Kommer du i vårt bryllup? *</label>
   <br>
   <label class="label" for="attendance">Ja</label>
@@ -89,8 +97,7 @@
   <button name="submit" value="Send" class="button" onclick="validateForm()">Send inn</button>
 </div>
 
-
-</div> <!--container-fluid div end-->
+</div> 
 
       </body>
     </html>
