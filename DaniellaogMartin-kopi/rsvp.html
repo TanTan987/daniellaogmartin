@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -26,34 +25,38 @@
 
 
 <div class="topnav" id="myTopnav">
-  <a href="daniellaogmartin_forside.html">Forside</a>
+  <a href="frontpage.html">Forside</a>
   <a href="images.html">Bilder</a>
   <a href="weddingday.html">Bryllupsdagen</a>
   <a href="information.html">Informasjon</a>
   <a href="wishlist.html">Ønskeliste</a>
   <a href="contacts.html">Kontakter</a>
-  <a href="#rsvp" class="active">RSVP</a>
+  <a href="mysql.php" class="active">RSVP</a>
   <a href="javascript:void(0);" class="icon" onclick="responsiveMobile()">&#9776;</a>
 </div>
-<div class="containerAll">
+<div id="containerAll">
 
 
-<div class="containerMain">
+<div id="containerMain">
 <!--Title-->
-  <div id="mainTitle">Daniella & Martin</div>
+  <div id="mainTitle">Daniella & Martin
+  <img id="ringImage" src="bilder/other/gifteringer.png" alt="Rings"></div>
 <!--Sub-title-->
-  <div id="sub-mainTitle">11.08.18</div>
-  <div id="sub-mainTitle">Bryn Kirke</div>
+  <div class="sub-mainTitle">11.08.18</div>
+  <div class="sub-mainTitle">Bryn Kirke</div>
 </div>
 
-<div class="containerInfo">
-<!--Title-->
+<div id="containerInfo">
+  <!--Title-->
   <div class="title">~RSVP~</div>
+
+<!--Connect to MySQL-->
+<form action="MySQL.php" method="post">
 
 <!--First name-->
 <div class="row">
     <label class="label" for="firstName">Fornavn *</label>
-    <input type="text" name="firstName" id="firstName" class="input" placeholder="Skriv inn fornavn...">
+    <input type="text" name="firstName" id="firstName" class="input" placeholder="Skriv inn fornavn..." required>
 </div>
 <br>
 
@@ -61,14 +64,14 @@
 <div class="row">
     <label class="label" id="lastNameLbl" for="lastName">Etternavn *</label>
 
-    <input type="text" name="lastName" id="lastName" class="input" placeholder="Skriv inn etternavn...">
+    <input type="text" name="lastName" id="lastName" class="input" placeholder="Skriv inn etternavn..." required>
 </div>
 <br>
 
 <!--Email-->
 <div class="row">
     <label class="label" for="email">Epost *</label>
-    <input type="text" name="email" id="email" class="input" placeholder="Skriv inn epostadresse...">
+    <input type="text" name="email" id="email" class="input" placeholder="Skriv inn epostadresse..." required>
 </div>
   <br>
 
@@ -85,7 +88,7 @@
   <br>
 
 <!--Allergies and others-->
-<div class="row">
+<div class="row"
   <label class="label" for="other">Allergier eller andre ting vi burde vite om?</label>
   <br>
   <textarea name="other" id="other" class="inputOther" placeholder="Skriv inn kommentarer..."></textarea>
@@ -96,8 +99,9 @@
 <div id="buttonTest">
   <button name="submit" value="Send" class="button" onclick="validateForm()">Send inn</button>
 </div>
+</form>
 
-</div> 
+</div>
 
       </body>
     </html>

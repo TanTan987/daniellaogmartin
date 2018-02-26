@@ -7,7 +7,6 @@ body{
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  letter-spacing: 2px;
   }
 
 /*To center eeeeverything*/
@@ -22,6 +21,14 @@ body{
   #wrapping {
   margin-left: 5%;
   margin-right: 5%;
+ }
+}
+
+/*Fixes image to bigger screens*/
+@media only screen and (min-width: 1300px) {
+  #wrapping {
+  margin-left: 15%;
+  margin-right: 15%;
  }
 }
 
@@ -41,7 +48,7 @@ body{
   display: block;
   color: black;
   text-align: center;
-  padding: 14px 16px;
+  padding: 14px 20px;
   text-decoration: none;
   font-size: 22px;
   font-family: "Dancing Script";
@@ -52,7 +59,6 @@ body{
 .topnav a:hover {
   /*background-color: rgba(107,142,35, 0.9);*/
   background-color: rgb(255,255,255);
-
   color: black;
   cursor: pointer;
   font-size: 23px;
@@ -60,9 +66,7 @@ body{
 
 /* Add an active class to highlight the current page */
 .active {
-  /*background-color: rgba(59,74,32, 0.9);*/
   background-color: rgb(255,255,255);
-
   font-style: italic;
 }
 
@@ -81,8 +85,8 @@ body{
 }
 
 /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
-/*This have to be 1280 for some reason*/
-@media screen and (max-width: 1500px) {
+/*This has to be 5000px for some reason*/
+@media screen and (max-width: 5000px) {
   .topnav.responsive {position: relative;}
   .topnav.responsive a.icon {
     right: 0;
@@ -102,14 +106,21 @@ body{
 }
 
 /*Container for boxes after menu*/
-.containerAll{
+#containerAll{
   display: flex;
   flex-direction: row;
 }
 
 @media screen and (max-width: 1260px) {
- .containerAll {
+ #containerAll {
    flex-direction: column;
+   width: 100%;
+ }
+}
+
+@media screen and (min-width: 1280px) {
+ #containerAll {
+   flex-direction: row;
    width: 100%;
  }
 }
@@ -124,7 +135,7 @@ body{
   color: black;
 }
 
-#sub-mainTitle {
+.sub-mainTitle {
   font-size: 40px;
   text-align: center;
   font-family: 'Great Vibes';
@@ -134,7 +145,7 @@ body{
 }
 
 /*Containerbox for main*/
-.containerMain {
+ #containerMain {
   background-color: rgba(255,255,255, 0.7);
   background-size: auto;
   flex: 1 1 auto;
@@ -146,18 +157,66 @@ body{
   width: 250%;
 }
 
-/*Container for front page main*/
-.containerMain-fp{
-  background-color: rgba(255,255,255, 0.7);
-  background-size: auto;
-  flex: 1 1 auto;
-  padding: 1em;
-  margin-left: : 1em;
-  margin-top: 1em;
-  height: 100%;
-  width: auto;
-  float:right;
+/*Had to put this in to make the page responsible for screens over 1280px*/
+@media screen and (max-width: 5000px) and (min-width: 0px) {
+  #containerMain {
+    background-color: rgba(255,255,255, 0.7);
+    background-size: auto;
+    flex: 1 1 auto;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-right: : 1em;
+    margin-top: 1em;
+    height: 100%;
+    width: 250%;
+  }
+
+  /*Container for front page main*/
+  #containerMain-fp{
+   background-color: rgba(255,255,255, 0.7);
+   background-size: auto;
+   flex: 1 1 auto;
+   padding: 1em;
+   margin-left: : 1em;
+   margin-top: 1em;
+   height: 100%;
+   width: 50%;
+   float:right;
+  }
+
+  /*When screen is smaller than */
+  @media screen and (max-width: 1260px) {
+   #containerMain-fp {
+     width: 96%;
+     float: none;
+   }
+  }
+
+/*Wedding ring image*/
+#ringImage {
+  width: 100px;
+  position: absolute;
 }
+
+@media screen and (max-width: 1833px) {
+  #ringImage {
+    position: initial;
+}}
+
+@media screen and (max-width: 550px) {
+  #ringImage {
+    position: absolute;
+}}
+
+#ringImage_images {
+  width: 100px;
+  position: absolute;
+}
+
+@media screen and (max-width: 800px) {
+  #ringImage_images {
+    position: initial;
+}}
 
 /*Containers for the images-page*/
 #containerAll_images{
@@ -165,7 +224,7 @@ body{
   width: 100%;
 }
 
-.containerMain_images {
+#containerMain_images {
   background-color: rgba(255,255,255, 0.7);
   margin-top: 1em;
   margin-bottom: 1em;
@@ -174,18 +233,18 @@ body{
 }
 
 @media screen and (max-width: 1260px) {
- .containerMain_images {
+ #containerMain_images {
    width:100%;
    margin-left: 0;
  }
 }
 
-.containerInfo_images {
+#containerInfo_images {
   display: flex;
 }
 
 /*Containerbox for information*/
-.containerInfo {
+#containerInfo {
   background-color: rgba(255,255,255,0.7);
   margin-left: 1em;
   margin-top: 1em;
@@ -195,7 +254,7 @@ body{
 }
 
  @media screen and (max-width: 1250px) {
- .containerInfo, .containerMain {
+ #containerInfo, #containerMain {
    margin-left: 0;
    margin-right: 0;
    margin-bottom: 0;
@@ -293,9 +352,9 @@ body{
   color: black;
   box-sizing: border-box;
   white-space: pre-wrap;
-  font-size: 20px;
   font-family: Times New Roman;
   color: black;
+  width: 30%;
 }
 
 /*Input for RSVP*/
@@ -311,8 +370,8 @@ body{
 
 .input {
   height: 100%;
-  width: 70%;
-  float: right;
+  width: 100%;
+  /* float: right; */
 }
 
 /*When screen goes to mobile, textboxes are changed*/
@@ -349,7 +408,7 @@ body{
 }
 
 /*Button for RSVP*/
-button {
+.button {
   width: 100%;
   background-color: white;
   height: 30px;
@@ -536,7 +595,6 @@ iframe {
   }
 }
 
-
 /*Image swing*/
 .swing {
   animation: swing ease-in-out 1s infinite alternate;
@@ -573,4 +631,8 @@ iframe {
 @keyframes swing {
   0% { transform: rotate(3deg); }
   100% { transform: rotate(-3deg); }
+}
+
+.error {
+  color: #FF0000;
 }
