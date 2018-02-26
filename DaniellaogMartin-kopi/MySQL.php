@@ -1,4 +1,5 @@
 <?php
+
 define('DB_NAME', 'daniellaogmartin');
 define('DB_USER', 'daniellaogmartin');
 define('DB_PASSWORD', 'ASnu5gHPnBZyQno');
@@ -6,8 +7,9 @@ define('DB_HOST', 'daniellaogmartin.mysql.domeneshop.no');
 
 $link = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
+
 /*Code for button*/
-  if(isset($_POST['submit'])){
+if(isset($_POST['submit'])){
   $value = $_POST['firstName'];
   $value2 = $_POST['lastName'];
   $value3 = $_POST['email'];
@@ -18,12 +20,18 @@ $link = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
   '$value3', '$value4', '$value5')";
   mysqli_query($link, $sql);
 
-   echo "<script type='text/javascript'>alert('Takk! Du er nå registrert.')</script>";
-   header("Location: http://www.daniellaogmartin.no/frontpage.html");
-  exit;
+  // header("Location: http://www.daniellaogmartin.no/frontpage.html");
+  // echo "<script type='text/javascript'>alert('Taaaakk');</script>";
+
+  echo "<script> alert('Takk! Du er nå registrert.');
+  window.location.href='http://www.daniellaogmartin.no/frontpage.html';
+  </script>";
+
+exit;
 
   mysqli_close();
-  }
+}
+
  ?>
 
  <!DOCTYPE html>
@@ -37,21 +45,23 @@ $link = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
  <!--JS-->
  <!--Responsive menu-->
  <script src="responsivemenu.js"></script>
- <!--Validation-->
- <!-- <script src="validation.js"></script> -->
- <!--Fonts for title-->
+<!--Fonts for title-->
  <link href="https://fonts.googleapis.com/css?family=Alex+Brush|Great+Vibes|Lovers+Quarrel|Rouge+Script|Dancing+Script|Poppins" rel="stylesheet">
      <title>Daniella & Martin</title>
      <script type="text/javascript">
+
 
 function validateFirstName() {
   regEx = /^[a-zA-ZæøåÆØÅ .\-]{2,20}$/;
   OK = regEx.test(document.rsvp.firstName.value);
   if(!OK){
-    document.getElementById("WrongFname").innerHTML="Vennligst skriv inn fornavn";
+    document.getElementById("WrongFname").innerHTML="*";
+    document.getElementById("firstName").style="border: 1px solid red;";
     return false;
   }
   document.getElementById("WrongFname").innerHTML="";
+  document.getElementById("firstName").style="border: none";
+
   return true;
 }
 
@@ -59,51 +69,44 @@ function validateLastName(){
   regEx = /^[a-zA-ZæøåÆØÅ .\-]{2,20}$/;
   OK = regEx.test(document.rsvp.lastName.value);
   if(!OK){
-    document.getElementById("WrongLname").innerHTML="Vennligst skriv inn etternavn";
+    document.getElementById("WrongLname").innerHTML="*";
+    document.getElementById("lastName").style="border: 1px solid red;";
     return false;
   }
   document.getElementById("WrongLname").innerHTML="";
+  document.getElementById("lastName").style="border: none";
+
   return true;
 }
 
 //validates email address
-function validateEmailAll() {
-  if (!(validateEmail(email))) {
-    document.getElementById("WrongEmail").innerHTML="Vennlist skriv inn en gyldig epostadresse";
-    return false;
-  }
-  else if (isEmpty(email)) {
-    document.getElementById("WrongEmail").innerHTML="Vennligst skriv inn en gyldig epostadresse";
+function validateEmail() {
+  re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  OK = re.test(document.rsvp.email.value);
+  if (!(OK)) {
+    document.getElementById("WrongEmail").innerHTML="*";
+    document.getElementById("email").style="border: 1px solid red;";
     return false;
   }
   else {
-    document.getElementById("WrongEmail").innerHTML="hallo";
+    document.getElementById("WrongEmail").innerHTML="";
+    document.getElementById("email").style="border: none";
+
     return true;
 }}
 
-
-//Validates email
-function validateEmail(email) {
-  var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(email);
-}
-
-//Checks for empty string
-function isEmpty(str) {
-  return (!str || 0 === str.length);
-}
-
 function validateForm(){
-    $firstNameOK = validateFirstName();
-    $lastNameOK = valideteLastName();
-    $emailOK = validateEmailAll();
-
-    if($firstNameOK && $lastNameOK && $emailOK){
-        return true;
+    if(validateFirstName() && validateLastName() && validateEmail()){
+      //make button enabled
+      btnEn = document.getElementById('submitBtn').disabled = false;
+      return btnEn;
     }
     else{
-        return false;
+      //keep button disabled
+      btnDis = document.getElementById('submitBtn').disabled = true;
+      return btnDis;
     }}
+
 
 
   </script>
@@ -136,21 +139,21 @@ function validateForm(){
    <div class="title">~RSVP~</div>
 
  <!--Connect to MySQL-->
-   <form method="post" name="rsvp" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" onsubmit="return validateForm">
+   <form method="post" name="rsvp" action="" onsubmit="validateForm()" id="rsvp">
      <table>
      <tr>
              <td class="label">Fornavn:</td>
-             <td><input type="text" name="firstName" onchange="validateFirstName()" id="firstName" class="input" placeholder="Skriv inn fornavn..." required></td>
+             <td><input type="text" name="firstName" onchange="validateFirstName()" onkeyup="validateForm()" id="firstName" class="input" placeholder="Skriv inn fornavn..." required></td>
              <td><div id="WrongFname">*</div></td>
      </tr>
      <tr>
             <td class="label">Etternavn:</td>
-            <td><input type="text" name="lastName" onchange="validateLastName()" id="lastName" class="input" placeholder="Skriv inn etternavn..." required></td>
+            <td><input type="text" name="lastName" onchange="validateLastName()" onkeyup="validateForm()" id="lastName" class="input" placeholder="Skriv inn etternavn..." required></td>
             <td><div id="WrongLname">*</div></td>
      </tr>
          <tr>
              <td class="label">Email:</td>
-             <td><input type="text" name="email" onchange="validateEmailAll()" id="email" class="input" placeholder="Skriv inn epostadresse..." required></td>
+             <td><input type="text" name="email" onchange="validateEmail()" onkeyup="validateForm()" id="email" class="input" placeholder="Skriv inn epostadresse..." required></td>
              <td><div id="WrongEmail">*</div></td>
      </tr>
          <tr>
@@ -163,8 +166,8 @@ function validateForm(){
            <td><textarea name="other" id="other" class="inputOther" placeholder="Skriv inn..."></textarea></td>
      </tr>
          <tr>
-             <td><input class="button" type="submit" name="submit" value="Registrer"></td>
-     </tr>
+             <td><input id="submitBtn" class="button" type="submit" name="submit" value="Registrer"></td>
+        </tr>
      </table>
 
 
