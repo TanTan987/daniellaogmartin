@@ -657,3 +657,13 @@ iframe {
 .error {
   color: #FF0000;
 }
+
+.footer {
+  margin-top: 2em;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 0.5rem;
+  background-color: rgba(255,255,255,0.8);
+  text-align: center;
+}

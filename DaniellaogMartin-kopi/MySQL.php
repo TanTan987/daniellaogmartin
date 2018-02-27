@@ -7,7 +7,6 @@ define('DB_HOST', 'daniellaogmartin.mysql.domeneshop.no');
 
 $link = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
-
 /*Code for button*/
 if(isset($_POST['submit'])){
   $value = $_POST['firstName'];
@@ -20,10 +19,31 @@ if(isset($_POST['submit'])){
   '$value3', '$value4', '$value5')";
   mysqli_query($link, $sql);
 
-  // header("Location: http://www.daniellaogmartin.no/frontpage.html");
-  // echo "<script type='text/javascript'>alert('Taaaakk');</script>";
+$to = $_REQUEST["email"];
+$cc = "admin@daniellaogmartin.no";
+$sendto = "$to, $cc";
+$subject = "Registrering Daniella og Martin";
+$headers = "From: admin@daniellaogmartin.no";
+$message = "Hei! Takk for at du registrerte deg til vårt bryllup." . "\n" . "Her er dine svar:" . "\n\n" .
+           "Fullt navn: " . $_REQUEST["firstName"] . " " . $_REQUEST["lastName"] . "\n" .
+           "E-post: " . $_REQUEST["email"] . "\n" .
+           "Kommer du i vårt bryllup?: " . $_REQUEST["attendance"] . "\n" .
+           "Allergier eller andre ting vi burde vite om?: " .  $_REQUEST["other"] . "\n\n" .
+           "Kjærlig hilsen," . "\n" . "Daniella og Martin" . "\n" .
+           "www.daniellaogmartin.no" . "\n\n\n\n\n" .
+           "Hi! Thank you for your registration to our wedding." . "\n" . "Here are your answers:" . "\n\n" .
+           "Full name: " . $_REQUEST["firstName"] . " " . $_REQUEST["lastName"] . "\n" .
+           "E-mail: " . $_REQUEST["email"] . "\n" .
+           "Will you be attending our wedding? : " . $_REQUEST["attendance"] . "\n" .
+           "Allergies or other things you think we should know? : " .  $_REQUEST["other"] . "\n\n" .
+           "Love," . "\n" . "Daniella and Martin" . "\n" .
+           "www.daniellaogmartin.no";
 
-  echo "<script> alert('Takk! Du er nå registrert.');
+// date("j.F, Y, G:i") . "\n\n" .
+mail($sendto, $subject, $message, $headers);
+
+
+  echo "<script> alert('Takk! Du er nå registrert. Du får en mail med oppsummering av dine svar.');
   window.location.href='http://www.daniellaogmartin.no/frontpage.html';
   </script>";
 
@@ -158,8 +178,8 @@ function validateForm(){
      </tr>
          <tr>
              <td class="label">Kommer du i bryllupet vårt?</td>
-             <td><input type="radio" name="attendance" class="radiobutton" id="attendanceYes" class="input" value="1" checked>Ja
-             <input type="radio" name="attendance" class="radiobutton" id="attendanceNo" class="input" value="0">Nei</td>
+             <td><input type="radio" name="attendance" class="radiobutton" id="attendanceYes" class="input" value="ja" checked>Ja
+             <input type="radio" name="attendance" class="radiobutton" id="attendanceNo" class="input" value="nei">Nei</td>
      </tr>
          <tr>
            <td class="label">Allergier eller andre ting vi burde vite om?</td>
