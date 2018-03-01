@@ -66,7 +66,7 @@ exit;
  <!--Responsive menu-->
  <script src="responsivemenu.js"></script>
 <!--Fonts for title-->
- <link href="https://fonts.googleapis.com/css?family=Alex+Brush|Great+Vibes|Lovers+Quarrel|Rouge+Script|Dancing+Script|Poppins" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Great+Vibes|Lovers+Quarrel|Rouge+Script|Dancing+Script|Poppins|Sacramento|Abel|Montserrat|Quicksand|Raleway" rel="stylesheet">
      <title>Daniella & Martin</title>
      <script type="text/javascript">
 
@@ -156,7 +156,7 @@ function validateForm(){
 
  <div id="containerInfo">
    <!--Title-->
-   <div class="title">~RSVP~</div>
+   <div class="title">RSVP</div>
 
  <!--Connect to MySQL-->
    <form method="post" name="rsvp" action="" onsubmit="validateForm()" id="rsvp">

@@ -135,7 +135,7 @@ body:before {
 @media screen and (max-width: 1260px) {
  #containerAll {
    flex-direction: column;
-   width: 100%;
+   width: 99.5%;
  }
 }
 
@@ -151,16 +151,14 @@ body:before {
   font-size: 60px;
   font-family: 'Lovers Quarrel';
   text-align: center;
-  letter-spacing: 4px;
-  text-align: center;
   color: black;
+  letter-spacing: 4px;
 }
 
 .sub-mainTitle {
   font-size: 40px;
   text-align: center;
   font-family: 'Great Vibes';
-  letter-spacing: 2px;
   padding: 5px;
   color: black;
 }
@@ -289,43 +287,40 @@ body:before {
 /*Titles for Container Info-boxes*/
 .title {
   font-size: 60px;
-  font-family: 'Dancing Script';
+  font-family: 'Great Vibes';
   text-align: center;
-  letter-spacing: 4px;
-  text-align: center;
+  letter-spacing: 2px;
   padding-bottom: 10px;
   color: black;
 }
 
 .title2 {
   font-size: 50px;
-  font-family: 'Dancing Script';
-  text-align: center;
-  letter-spacing: 4px;
+  font-family: 'Great Vibes';
   text-align: center;
   padding-bottom: 10px;
   color: black;
 }
 
 .subTitle {
-  font-size: 30px;
-  font-family: 'Dancing Script';
-  text-align: center;
-  letter-spacing: 4px;
+  font-size: 40px;
+  font-family: 'Great Vibes';
   text-align: center;
   color: black;
   padding-top: 2px;
+  letter-spacing: 2px;
 }
 
-.subTitle {
+.subTitle2 {
   font-size: 30px;
-  font-family: 'Dancing Script';
-  text-align: center;
-  letter-spacing: 4px;
+  font-family: 'Great Vibes';
   text-align: center;
   color: black;
   padding-top: 2px;
+  letter-spacing: 2px;
 }
+
+
 
 /*Resizes the titles*/
 @media screen and (max-width: 600px) {
@@ -345,7 +340,8 @@ body:before {
 
 /*All rows*/
 .row {
-  padding: 5px;
+  padding-top: 5px;
+  padding-bottom: 20px;
   width: 100%;
 }
 
@@ -499,12 +495,7 @@ iframe {
 
 /*The order now-links*/
 .hotelLink {
-  text-align: center;
-  text-indent: inherit;
-  font-family: 'Poppins';
-  color: black;
   text-decoration: underline;
-  padding-left: 40%;
 }
 
 .hotelLink:hover {
