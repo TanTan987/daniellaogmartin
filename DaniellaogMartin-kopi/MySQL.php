@@ -19,31 +19,29 @@ if(isset($_POST['submit'])){
   '$value3', '$value4', '$value5')";
   mysqli_query($link, $sql);
 
-$to = $_REQUEST["email"];
-$cc = "admin@daniellaogmartin.no";
-$sendto = "$to, $cc";
-$subject = "Registrering Daniella og Martin";
-$headers = "From: admin@daniellaogmartin.no";
-$message = "Hei! Takk for at du registrerte deg til vårt bryllup." . "\n" . "Her er dine svar:" . "\n\n" .
-           "Fullt navn: " . $_REQUEST["firstName"] . " " . $_REQUEST["lastName"] . "\n" .
-           "E-post: " . $_REQUEST["email"] . "\n" .
-           "Kommer du i vårt bryllup?: " . $_REQUEST["attendance"] . "\n" .
-           "Allergier eller andre ting vi burde vite om?: " .  $_REQUEST["other"] . "\n\n" .
-           "Kjærlig hilsen," . "\n" . "Daniella og Martin" . "\n" .
-           "www.daniellaogmartin.no" . "\n\n\n\n\n" .
-           "Hi! Thank you for your registration to our wedding." . "\n" . "Here are your answers:" . "\n\n" .
-           "Full name: " . $_REQUEST["firstName"] . " " . $_REQUEST["lastName"] . "\n" .
-           "E-mail: " . $_REQUEST["email"] . "\n" .
-           "Will you be attending our wedding? : " . $_REQUEST["attendance"] . "\n" .
-           "Allergies or other things you think we should know? : " .  $_REQUEST["other"] . "\n\n" .
-           "Love," . "\n" . "Daniella and Martin" . "\n" .
-           "www.daniellaogmartin.no";
+  $to = $_REQUEST["email"];
+  $cc = "admin@daniellaogmartin.no";
+  $sendto = "$to, $cc";
+  $subject = "Registrering Daniella og Martin";
+  $headers = "From: admin@daniellaogmartin.no";
+  $message = "Hei! Takk for at du registrerte deg til vårt bryllup." . "\n" . "Her er dine svar:" . "\n\n" .
+             "Fullt navn: " . $_REQUEST["firstName"] . " " . $_REQUEST["lastName"] . "\n" .
+             "E-post: " . $_REQUEST["email"] . "\n" .
+             "Kommer du i vårt bryllup?: " . $_REQUEST["attendance"] . "\n" .
+             "Allergier eller andre ting vi burde vite om?: " .  $_REQUEST["other"] . "\n\n" .
+             "Kjærlig hilsen," . "\n" . "Daniella og Martin" . "\n" .
+             "www.daniellaogmartin.no" . "\n\n\n\n\n" .
+             "Hi! Thank you for your registration to our wedding." . "\n" . "Here are your answers:" . "\n\n" .
+             "Full name: " . $_REQUEST["firstName"] . " " . $_REQUEST["lastName"] . "\n" .
+             "E-mail: " . $_REQUEST["email"] . "\n" .
+             "Will you be attending our wedding? : " . $_REQUEST["attendance"] . "\n" .
+             "Allergies or other things you think we should know? : " .  $_REQUEST["other"] . "\n\n" .
+             "Love," . "\n" . "Daniella and Martin" . "\n" .
+             "www.daniellaogmartin.no";
 
-// date("j.F, Y, G:i") . "\n\n" .
-mail($sendto, $subject, $message, $headers);
+  mail($sendto, $subject, $message, $headers);
 
-
-  echo "<script> alert('Takk! Du er nå registrert. Du får en mail med oppsummering av dine svar.');
+  echo "<script> alert('Takk! Du er nå registrert. Du får en mail med oppsummering av dine svar. PS: Sjekk spam-folder om du ikke får mail i innboksen.');
   window.location.href='http://www.daniellaogmartin.no/frontpage.html';
   </script>";
 
@@ -65,6 +63,10 @@ exit;
  <!--JS-->
  <!--Responsive menu-->
  <script src="responsivemenu.js"></script>
+
+ <!--Icon-->
+ <link rel="icon" type="image/x-icon" href="bilder/other/icon.ico" />
+
 <!--Fonts for title-->
 <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Lovers+Quarrel|Rouge+Script|Dancing+Script|Poppins|Sacramento|Abel|Montserrat|Quicksand|Raleway" rel="stylesheet">
      <title>Daniella & Martin</title>
@@ -134,16 +136,17 @@ function validateForm(){
   <body>
  <div id="wrapping">
 
- <div class="topnav" id="myTopnav">
-   <a href="frontpage.html">Forside</a>
-   <a href="images.html">Bilder</a>
-   <a href="weddingday.html">Bryllupsdagen</a>
-   <a href="information.html">Informasjon</a>
-   <a href="wishlist.html">Ønskeliste</a>
-   <a href="contacts.html">Kontakter</a>
-   <a href="mysql.php" class="active">RSVP</a>
-   <a href="javascript:void(0);" class="icon" onclick="responsiveMobile()">&#9776;</a>
- </div>
+<div class="topnav" id="myTopnav">
+ <a href="frontpage.html">Forside</a>
+ <a href="images.html">Bilder</a>
+ <a href="weddingday.html">Bryllupsdagen</a>
+ <a href="information.html">Informasjon</a>
+ <a href="wishlist.html">Ønskeliste</a>
+ <a href="contacts.html">Kontakter</a>
+ <a href="mysql.php" class="active">RSVP</a>
+ <a href="javascript:void(0);" class="icon" onclick="responsiveMobile()">&#9776;</a>
+</div>
+
  <div id="containerAll">
  <div id="containerMain">
  <!--Title-->
@@ -158,42 +161,49 @@ function validateForm(){
    <!--Title-->
    <div class="title">RSVP</div>
 
- <!--Connect to MySQL-->
+   <!--Connect to MySQL-->
    <form method="post" name="rsvp" action="" onsubmit="validateForm()" id="rsvp">
-     <table>
-     <tr>
-             <td class="label">Fornavn:</td>
-             <td><input type="text" name="firstName" onchange="validateFirstName()" onkeyup="validateForm()" id="firstName" class="input" placeholder="Skriv inn fornavn..." required></td>
-             <td><div id="WrongFname">*</div></td>
-     </tr>
-     <tr>
-            <td class="label">Etternavn:</td>
-            <td><input type="text" name="lastName" onchange="validateLastName()" onkeyup="validateForm()" id="lastName" class="input" placeholder="Skriv inn etternavn..." required></td>
-            <td><div id="WrongLname">*</div></td>
-     </tr>
-         <tr>
-             <td class="label">Email:</td>
-             <td><input type="text" name="email" onchange="validateEmail()" onkeyup="validateForm()" id="email" class="input" placeholder="Skriv inn epostadresse..." required></td>
-             <td><div id="WrongEmail">*</div></td>
-     </tr>
-         <tr>
-             <td class="label">Kommer du i bryllupet vårt?</td>
-             <td><input type="radio" name="attendance" class="radiobutton" id="attendanceYes" class="input" value="ja" checked>Ja
-             <input type="radio" name="attendance" class="radiobutton" id="attendanceNo" class="input" value="nei">Nei</td>
-     </tr>
-         <tr>
-           <td class="label">Allergier eller andre ting vi burde vite om?</td>
-           <td><textarea name="other" id="other" class="inputOther" placeholder="Skriv inn..."></textarea></td>
-     </tr>
-         <tr>
-             <td><input id="submitBtn" class="button" type="submit" name="submit" value="Registrer"></td>
-        </tr>
-     </table>
 
+  <div class="rsvpRow">
+    <div class="label">Fornavn:</div>
+    <td><input type="text" name="firstName" onchange="validateFirstName()" onkeyup="validateForm()" id="firstName" class="input" placeholder="Skriv inn fornavn..." required></td>
+    <div id="WrongFname">*</div>
+  </div>
 
- </form>
+  <div class="rsvpRow">
+    <div class="label">Etternavn:</div>
+    <td><input type="text" name="lastName" onchange="validateLastName()" onkeyup="validateForm()" id="lastName" class="input" placeholder="Skriv inn etternavn..." required></td>
+    <div id="WrongLname">*</div>
+  </div>
 
+  <div class="rsvpRow">
+    <div class="label">Email:</div>
+    <td><input type="text" name="email" onchange="validateEmail()" onkeyup="validateForm()" id="email" class="input" placeholder="Skriv inn epostadresse..." required></td>
+    <div id="WrongEmail">*</div>
+  </div>
+
+  <div class="rsvpRow">
+    <div class="label">Kommer du i bryllupet vårt?</div>
+    <td><input type="radio" name="attendance" class="radiobutton" id="attendanceYes" class="input" value="ja" checked>Ja&nbsp;&nbsp;&nbsp;
+    <input type="radio" name="attendance" class="radiobutton" id="attendanceNo" class="input" value="nei">Nei</td>
+  </div>
+
+  <div class="rsvpRow">
+    <div class="label">Allergier eller andre ting vi burde vite om?</div>
+    <td><textarea name="other" id="other" class="inputOther" placeholder="Skriv inn..."></textarea></td>
+
+  </div>
+
+  <div class="rsvpRow">
+    <td><input id="submitBtn" class="button" type="submit" name="submit" value="Registrer"></td>
+
+  </div>
+
+  </form>
+
+   </div>
  </div>
+
 
        </body>
      </html>
