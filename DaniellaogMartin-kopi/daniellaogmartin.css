@@ -124,7 +124,7 @@ body:before {
 
 /*Title for ContainerMain*/
 #mainTitle{
-  font-size: 60px;
+  font-size: 9vmin;
   font-family: 'Lovers Quarrel';
   text-align: center;
   color: black;
@@ -132,7 +132,7 @@ body:before {
   }
 
 .sub-mainTitle {
-  font-size: 40px;
+  font-size: 6vmin;
   text-align: center;
   font-family: 'Great Vibes';
   padding: 5px;
@@ -148,7 +148,7 @@ body:before {
   padding-bottom: 1em;
   margin-right: 1em;
   height: 100%;
-  width: 50%;
+  width: 40%;
 }
 
 /*Container for front page main*/
@@ -160,7 +160,7 @@ body:before {
   padding-bottom: 1em;
   margin-top: 1em;
   height: 100%;
-  width: 50%;
+  width: 60%;
   float: right;
 }
 
@@ -174,8 +174,9 @@ body:before {
 
 /*Wedding ring image*/
 #ringImage {
-  width: 100px;
+  /*width: 100px;*/
   position: initial;
+  width: 15vmin;
 }
 
 @media screen and (max-width: 1200px) {
@@ -188,10 +189,15 @@ body:before {
     position: initial;
 }}
 
+@media only screen and (max-width: 487px) {
+  #ringImage{
+      position: absolute;
+}}
+
 
 
 #ringImage_images {
-  width: 100px;
+  width: 15vmin;
   position: absolute;
 }
 
@@ -209,12 +215,12 @@ body:before {
 #containerMain_images {
   background-color: rgba(255,255,255, 0.7);
   margin-top: 1em;
-  margin-bottom: 1em;
   width: 100%;
 }
 
 #containerInfo_images {
   display: flex;
+  width: 100%;
 }
 
 /*Containerbox for information*/
@@ -222,6 +228,7 @@ body:before {
   background-color: rgba(255,255,255,0.7);
   flex: 2 1 auto;
   width: 50%;
+  padding-bottom: 1em;
 }
 
 @media screen and (max-width: 1200px) {
@@ -236,7 +243,7 @@ body:before {
 
 /*Titles for Container Info-boxes*/
 .title {
-  font-size: 60px;
+  font-size: 9vmin;
   font-family: 'Great Vibes';
   text-align: center;
   letter-spacing: 2px;
@@ -246,15 +253,15 @@ body:before {
 }
 
 .title2 {
-  font-size: 50px;
+  font-size: 8vmin;
   font-family: 'Great Vibes';
   text-align: center;
-  padding-bottom: 10px;
+  padding-top: 10px;
   color: black;
 }
 
 .subTitle {
-  font-size: 40px;
+  font-size: 7.5vmin;
   font-family: 'Great Vibes';
   text-align: center;
   color: black;
@@ -271,30 +278,14 @@ body:before {
   letter-spacing: 2px;
 }
 
-/*Resizes the titles*/
-@media screen and (max-width: 600px) {
-  .title{
-    font-size: 9.5vw;
-  }
-  .title2{
-    font-size: 8.5vw;
-  }
-  .subTitle{
-    font-size: 7.5vw;
-  }
-}
-
 /*All rows*/
 .row {
   padding-top: 5px;
-  padding-bottom: 20px;
   width: 100%;
 }
 
 .contactsRow {
-  padding: 5px;
   width: 100%;
-  margin: 5px;
   display: flex;
   flex-direction: column;
 }
@@ -316,6 +307,7 @@ body:before {
   color: black;
   margin-left: 1em;
   margin-right: 1em;
+  margin-top: 0;
 }
 
 /*Label for RSVP*/
@@ -391,6 +383,10 @@ body:before {
 @media screen and (max-width: 650px) {
   .input, .inputOther{
     width: 50%;
+    font-size: 15px;
+  }
+  .label, .button {
+    font-size: 2.5vmax;
   }
 }
 
@@ -435,16 +431,23 @@ body:before {
 iframe {
   border: 1px solid grey;
   margin-bottom: 10px;
-  width: 100%;
+  width: 90%;
   height: 300px;
-  float: left;
   position: inherit;
+  margin-left: 5%;
+
 }
 
 @media screen and (max-width: 1200px) {
   iframe{
-    width: 100%;
     height: 400px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  iframe{
+    height: 200px;
+
   }
 }
 
@@ -460,16 +463,26 @@ iframe {
 /*image carousel*/
 .carousel {
   position:relative;
-  width:600px;
-  border:10px solid white;
+  border:5px solid white;
   margin:20px auto;
   box-shadow:0px 0px 40px #000;
+  background-color: rgba(255,255,255, 0.7);
+  height: 100%;
 }
 
 .carousel > img {
-  display:none;
-  width:100%;
+  display: none;
+  width: 50%;
+  margin-left: 25%;
 }
+
+@media screen and (max-width: 600px) {
+  .carousel > img {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
 .carousel > input {
   position:absolute;
   left:-9999px;
@@ -496,7 +509,9 @@ iframe {
   top:0;
   width:25%;
   height:100%;
-  visibility:hidden;
+  visibility:visible;
+  opacity: 0.5;
+
 }
 .carousel > label:before {
   content:'';
@@ -506,6 +521,7 @@ iframe {
   height:100%;
   visibility:visible;
 }
+
 .carousel > label:after {
   display:block;
   position:absolute;
@@ -520,13 +536,14 @@ iframe {
   font-weight:bold;
   font-size:18px;
   text-align:center;
-  visibility:hidden;
+  visibility:visible;
   border:2px solid white;
   border-radius:20px;
   box-shadow:0 3px 4px black;
 }
-.carousel > label:hover:after {
-  visibility:visible;
+
+.carousel > label:hover {
+ opacity: 1;
 }
 
 .carousel > input:checked + label:after {
@@ -552,13 +569,13 @@ iframe {
 
 @media screen and (max-width: 850px) {
   .contactImage{
-    margin-left: 25%;
+    margin-left: 14%;
   }
 }
 
 @media screen and (max-width: 600px) {
   .contactImage{
-    margin-left: 0;
+    margin-left: 5%;
   }
 }
 
