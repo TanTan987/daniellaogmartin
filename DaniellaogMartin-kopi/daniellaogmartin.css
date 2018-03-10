@@ -425,8 +425,7 @@ iframe {
 
 /*images for contacts*/
 .contactImage{
-  margin-left: 18%;
-  margin-top: 2px;
+  margin:auto;
 }
 
 /*Image swing*/
@@ -506,9 +505,6 @@ iframe {
     width: 100%;
     margin-left: 0;
   }
-  .contactImage{
-    margin-left: 5%;
-  }
   #attendanceAnswers {
     margin-top: 5%;
     margin-left: 10%;
@@ -544,9 +540,6 @@ iframe {
 @media screen and (max-width: 850px) {
   #ringImage {
     position: initial;
-  }
-  .contactImage{
-    margin-left: 14%;
   }
 }
 
@@ -599,9 +592,6 @@ iframe {
 
 /*1250px*/
 @media screen and (max-width: 1250px) {
-  .contactImage{
-    margin-left: 30%;
-  }
 }
 
 /*1260px*/
