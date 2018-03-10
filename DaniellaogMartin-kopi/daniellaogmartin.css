@@ -1,3 +1,4 @@
+/*Fixes background*/
 body:before {
   content: "";
   display: block;
@@ -14,10 +15,11 @@ body:before {
   background-size: cover;
 }
 
-@media only screen and (max-width: 767px) {
-  body:before {
-    background-position-x: -40px;
-  }
+.imagesbody {
+  padding:0px;
+  margin:0px;
+  background-color:#fff;
+  font-family:arial,helvetica,sans-serif,verdana,'Open Sans';
 }
 
 /*To center eeeeverything*/
@@ -26,15 +28,7 @@ body:before {
   margin-right: 15%;
 }
 
-/*Fixes image to mobile*/
-@media only screen and (max-width: 487px) {
-  #wrapping {
-    margin-left: 5%;
-    margin-right: 5%;
- }
-}
-
-/* Add a background color to the top navigation */
+/*Add a background color to the top navigation*/
 .topnav {
   background-color: rgba(255,255,255,0.8);
   margin: auto;
@@ -46,7 +40,7 @@ body:before {
   justify-content: center;
 }
 
-/* Style the links inside the navigation bar */
+/*Style the links inside the navigation bar*/
 .topnav a {
   float: left;
   color: black;
@@ -77,49 +71,12 @@ body:before {
   display: none;
 }
 
-/* When the screen is less than 870 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
-@media screen and (max-width: 1200px) {
-  .topnav a:not(:first-child) {
-    display: none;
-  }
-  .topnav a.icon {
-    float: right;
-    display: block;
-    flex-direction: none;
-    flex-wrap: none;
-    justify-content: none;
-  }
-  .topnav.responsive {
-    position: relative;
-    flex-direction: column;
-  }
-  .topnav.responsive a.icon {
-    right: 0;
-    top: 0;
-  }
-  .topnav {
-    margin-left: auto;
-    justify-content: flex-end;
-  }
-  .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: center;
-  }
-}
-
-/*Container for boxes after menu*/
+/*Container for containers after menu*/
 #containerAll {
   display: flex;
   flex-direction: row;
   margin-top: 1em;
   margin-bottom: 1em;
-}
-
-@media screen and (max-width: 1200px) {
- #containerAll {
-   flex-direction: column;
- }
 }
 
 /*Title for ContainerMain*/
@@ -164,49 +121,19 @@ body:before {
   float: right;
 }
 
-/*When screen is smaller than */
-@media screen and (max-width: 1260px) {
- #containerMain-fp {
-   width: 100%;
-   float: none;
- }
-}
-
 /*Wedding ring image*/
 #ringImage {
-  /*width: 100px;*/
   position: initial;
   width: 15vmin;
 }
 
-@media screen and (max-width: 1200px) {
-  #ringImage {
-    position: absolute;
-}}
-
-@media screen and (max-width: 850px) {
-  #ringImage {
-    position: initial;
-}}
-
-@media only screen and (max-width: 487px) {
-  #ringImage{
-      position: absolute;
-}}
-
-
-
+/*RingImage on images page*/
 #ringImage_images {
   width: 15vmin;
   position: absolute;
 }
 
-@media screen and (max-width: 800px) {
-  #ringImage_images {
-    position: initial;
-}}
-
-/*Containers for the images-page*/
+/*Containers for images page*/
 #containerAll_images{
   float: right;
   width: 100%;
@@ -220,7 +147,11 @@ body:before {
 
 #containerInfo_images {
   display: flex;
-  width: 100%;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding-top:1em;
+  padding-bottom: 1em;
+  background: rgba(255,255,255,0.7);
 }
 
 /*Containerbox for information*/
@@ -229,16 +160,6 @@ body:before {
   flex: 2 1 auto;
   width: 50%;
   padding-bottom: 1em;
-}
-
-@media screen and (max-width: 1200px) {
- #containerInfo {
-   margin-top: 1em;
-   width: 100%;
- }
- #containerMain {
-   width: 100%;
- }
 }
 
 /*Titles for Container Info-boxes*/
@@ -278,7 +199,7 @@ body:before {
   letter-spacing: 2px;
 }
 
-/*All rows*/
+/*Rows*/
 .row {
   padding-top: 5px;
   width: 100%;
@@ -296,6 +217,11 @@ body:before {
   width: 100%;
   display: flex;
   flex-direction: row;
+}
+
+#rsvp {
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
 /*All text*/
@@ -320,6 +246,7 @@ body:before {
   font-family: Times New Roman;
   color: black;
   width: 30%;
+  margin-right: 5%;
 }
 
 /*Input for RSVP*/
@@ -340,8 +267,7 @@ body:before {
 
 .inputOther {
   height: 7em;
-  width: 95%;
-  margin-top: 2%;
+  width: 100%;
   resize: none;
 }
 
@@ -359,40 +285,9 @@ body:before {
   box-sizing: border-box;
 }
 
-@media screen and (max-width: 1260px) {
-  .button{
-    margin-left: 5%;
-    margin-right: 5%;
-  }
-  .inputOther {
-    margin-right: 5%;
-  }
-  .input{
-    margin-right: 2%;
-    margin-left: 1%;
-  }
-  .label {
-    margin-left: 5%;
-    margin-right: 5%;
-  }
-  #WrongEmail, #WrongFname, #WrongLname{
-    margin-right: 2%;
-  }
-}
-
-@media screen and (max-width: 650px) {
-  .input, .inputOther{
-    width: 50%;
-    font-size: 15px;
-  }
-  .label, .button {
-    font-size: 2.5vmax;
-  }
-}
-
 /*Animation for hovering the submit-button*/
 .button:hover {
-  background-color: white;
+  background-color: azure;
 }
 
 /*If error in inputboxes*/
@@ -415,13 +310,6 @@ body:before {
   margin-right: 10%;
 }
 
-@media screen and (max-width: 600px) {
-  iframe, .image{
-    float: none;
-    position: center;
-  }
-}
-
 .w3-button, .w3-black, .w3-display-left {
   width: 5%;
   resize: none;
@@ -438,19 +326,6 @@ iframe {
 
 }
 
-@media screen and (max-width: 1200px) {
-  iframe{
-    height: 400px;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  iframe{
-    height: 200px;
-
-  }
-}
-
 /*The order now-links*/
 .hotelLink {
   text-decoration: underline;
@@ -464,7 +339,6 @@ iframe {
 .carousel {
   position:relative;
   border:5px solid white;
-  margin:20px auto;
   box-shadow:0px 0px 40px #000;
   background-color: rgba(255,255,255, 0.7);
   height: 100%;
@@ -474,13 +348,7 @@ iframe {
   display: none;
   width: 50%;
   margin-left: 25%;
-}
-
-@media screen and (max-width: 600px) {
-  .carousel > img {
-    width: 100%;
-    margin-left: 0;
-  }
+  position:relative;
 }
 
 .carousel > input {
@@ -561,24 +429,6 @@ iframe {
   margin-top: 2px;
 }
 
-@media screen and (max-width: 1250px) {
-  .contactImage{
-    margin-left: 30%;
-  }
-}
-
-@media screen and (max-width: 850px) {
-  .contactImage{
-    margin-left: 14%;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .contactImage{
-    margin-left: 5%;
-  }
-}
-
 /*Image swing*/
 .swing {
   animation: swing ease-in-out 1s infinite alternate;
@@ -631,7 +481,152 @@ iframe {
   text-align: center;
 }
 
-#rsvp {
-  padding-left: 1em;
-  padding-right: 1em;
+/*Fixes everything to mobile*/
+/*487px*/
+@media only screen and (max-width: 487px) {
+  #wrapping {
+    margin-left: 5%;
+    margin-right: 5%;
+ }
+  #ringImage{
+    position: absolute;
+  }
+}
+
+/*600px*/
+@media screen and (max-width: 600px) {
+  iframe, .image{
+    float: none;
+    position: center;
+  }
+  iframe{
+    height: 200px;
+  }
+  .carousel > img {
+    width: 100%;
+    margin-left: 0;
+  }
+  .contactImage{
+    margin-left: 5%;
+  }
+  #attendanceAnswers {
+    margin-top: 5%;
+    margin-left: 10%;
+  }
+}
+
+/*650px*/
+@media screen and (max-width: 650px) {
+  .input, .inputOther{
+    width: 50%;
+    font-size: 15px;
+  }
+  .label, .button {
+    font-size: 2.5vmax;
+  }
+}
+
+/*767px*/
+@media only screen and (max-width: 767px) {
+  body:before {
+    background-position-x: -40px;
+  }
+}
+
+/*800px*/
+@media screen and (max-width: 800px) {
+  #ringImage_images {
+    position: initial;
+  }
+}
+
+/*850px*/
+@media screen and (max-width: 850px) {
+  #ringImage {
+    position: initial;
+  }
+  .contactImage{
+    margin-left: 14%;
+  }
+}
+
+/*1200px*/
+@media screen and (max-width: 1200px) {
+  .topnav a:not(:first-child) {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+    flex-direction: none;
+    flex-wrap: none;
+    justify-content: none;
+  }
+  .topnav.responsive {
+    position: relative;
+    flex-direction: column;
+  }
+  .topnav.responsive a.icon {
+    right: 0;
+    top: 0;
+  }
+  .topnav {
+    margin-left: auto;
+    justify-content: flex-end;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: center;
+  }
+  #containerAll {
+    flex-direction: column;
+  }
+  #ringImage {
+    position: absolute;
+  }
+  #containerInfo {
+    margin-top: 1em;
+    width: 100%;
+  }
+  #containerMain {
+    width: 100%;
+  }
+  iframe{
+    height: 400px;
+  }
+}
+
+/*1250px*/
+@media screen and (max-width: 1250px) {
+  .contactImage{
+    margin-left: 30%;
+  }
+}
+
+/*1260px*/
+@media screen and (max-width: 1260px) {
+ #containerMain-fp {
+   width: 100%;
+   float: none;
+ }
+ .button{
+   margin-left: 5%;
+   margin-right: 5%;
+ }
+ .inputOther {
+   margin-right: 5%;
+   height: 5em;
+ }
+ .input{
+   margin-right: 2%;
+   margin-left: 1%;
+ }
+ .label {
+   margin-left: 5%;
+   margin-right: 5%;
+ }
+ #WrongEmail, #WrongFname, #WrongLname{
+   margin-right: 2%;
+ }
 }

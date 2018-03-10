@@ -184,8 +184,8 @@ function validateForm(){
 
   <div class="rsvpRow">
     <div class="label">Kommer du i bryllupet vårt?</div>
-    <td><input type="radio" name="attendance" class="radiobutton" id="attendanceYes" class="input" value="ja" checked>Ja&nbsp;&nbsp;&nbsp;
-    <input type="radio" name="attendance" class="radiobutton" id="attendanceNo" class="input" value="nei">Nei</td>
+    <div id="attendanceAnswers"><td><input type="radio" name="attendance" class="radiobutton" id="attendanceYes" class="input" value="ja" checked>Ja&nbsp;&nbsp;&nbsp;
+    <input type="radio" name="attendance" class="radiobutton" id="attendanceNo" class="input" value="nei">Nei</td></div>
   </div>
 
   <div class="rsvpRow">
