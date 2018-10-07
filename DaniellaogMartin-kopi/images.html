@@ -27,8 +27,8 @@
       <a href="frontpage.html">Forside</a>
       <a href="images.html" class="active">Bilder</a>
       <a href="weddingday.html">Bryllupsdagen</a>
-      <a href="information.html">Informasjon</a>
-      <a href="wishlist.html">Ønskeliste</a>
+<!--       <a href="information.html">Informasjon</a>
+ -->      <a href="wishlist.html">Ønskeliste</a>
       <a href="contacts.html">Kontakter</a>
       <a href="mysql.php">RSVP</a>
       <a href="javascript:void(0);" class="icon" onclick="responsiveMobile()">&#9776;</a>
@@ -104,7 +104,7 @@
 
             var MAX_WIDTH = 980;
             var MAX_HEIGHT = 460;
-            var MAX_BLEEDING = 0.8;
+            var MAX_BLEEDING = 0.5;
 
             function ScaleSlider() {
                 var containerElement = jssor_1_slider.$Elmt.parentNode;
@@ -118,18 +118,19 @@
 
                     var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth);
                     var expectedHeight = Math.min(MAX_HEIGHT || containerHeight, containerHeight);
-
+                
+                               
                     //constrain bullets, arrows inside slider area, it's optional, remove it if not necessary
-                    if (MAX_BLEEDING >= 0 && MAX_BLEEDING < 1) {
-                        var widthRatio = expectedWidth / originalWidth;
-                        var heightRatio = expectedHeight / originalHeight;
-                        var maxScaleRatio = Math.max(widthRatio, heightRatio);
-                        var minScaleRatio = Math.min(widthRatio, heightRatio);
+                    // if (MAX_BLEEDING >= 0 && MAX_BLEEDING < 1) {
+                    //     var widthRatio = expectedWidth / originalWidth;
+                    //     var heightRatio = expectedHeight / originalHeight;
+                    //     var maxScaleRatio = Math.max(widthRatio, heightRatio);
+                    //     var minScaleRatio = Math.min(widthRatio, heightRatio);
 
-                        maxScaleRatio = Math.min(maxScaleRatio / minScaleRatio, 1 / (1 - MAX_BLEEDING)) * minScaleRatio;
-                        expectedWidth = Math.min(expectedWidth, originalWidth * maxScaleRatio);
-                        expectedHeight = Math.min(expectedHeight, originalHeight * maxScaleRatio);
-                    }
+                    //     maxScaleRatio = Math.min(maxScaleRatio / minScaleRatio, 1 / (1 - MAX_BLEEDING)) * minScaleRatio;
+                    //     expectedWidth = Math.min(expectedWidth, originalWidth * maxScaleRatio);
+                    //     expectedHeight = Math.min(expectedHeight, originalHeight * maxScaleRatio);
+                    // }
 
                     //scale the slider to expected size
                     jssor_1_slider.$ScaleSize(expectedWidth, expectedHeight, MAX_BLEEDING);
@@ -153,6 +154,7 @@
             /*#endregion responsive code end*/
         });
     </script>
+
     <style>
         html, body {
             position:absolute;
@@ -192,7 +194,14 @@
         .jssora074:hover {opacity:.8;}
         .jssora074.jssora074dn {opacity:.4;}
         .jssora074.jssora074ds {opacity:.3;pointer-events:none;}
+    
+        
+        @media screen and (max-width: 1250px) {
+
+        }
+
     </style>
+
     <div style="position:relative;top:0;left:0;width:100%;height:100%;overflow:hidden;">
       <div id="containerInfo_images">
 
